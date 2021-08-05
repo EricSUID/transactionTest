@@ -409,10 +409,13 @@ public class TransactionTestApplicationTests {
     //------------------------------------------------------------------------------
     /**
      * NESTED 和 REQUIRED 修饰的内部方法都属于外围方法事务，如果外围方法抛出异常，这两种方法的事务都会被回滚。
+     *
      * 但是 REQUIRED 是加入外围方法事务，所以和外围事务同属于一个事务，所以一旦 REQUIRED 事务抛出异常被回滚，外围方法事务也将被回滚。{@link #transaction_required_required_exception_try}
      * 而 NESTED 是外围方法的子事务，有单独的保存点，所以 NESTED 方法抛出异常被回滚，不会影响到外围方法的事务。{@link #transaction_nested_nested_exception_try}
+     *
      * NESTED 和 REQUIRES_NEW 都可以做到内部方法事务回滚但是不影响外围方法事务。{@link #transaction_required_requiresNew_requiresNew_exception_try}
      * 但是因为 NESTED 是嵌套事务，所以外围方法回滚之后，作为外围方法事务的子事务也会被回滚。{@link #transaction_exception_nested_nested}
+     *
      * 而 REQUIRES_NEW 是通过开启新的事务实现的，内部事务和外围事务是两个事务，外围事务回滚不会影响内部事务。{@link #transaction_exception_required_requiresNew_requiresNew}
      */
     //------------------------------------------------------------------------------
