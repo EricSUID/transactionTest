@@ -19,7 +19,7 @@
         <mysql.version>5.1.46</mysql.version>
         <mybatis.version>2.0.0</mybatis.version>
 
-        <fastjson.version>1.2.69</fastjson.version>
+<!--        <fastjson.version>1.2.69</fastjson.version>-->
     </properties>
     <dependencies>
         <!--spring-core-->
@@ -57,11 +57,11 @@
         </dependency>
 
         <!-- JSON -->
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>fastjson</artifactId>
-            <version>${fastjson.version}</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.alibaba</groupId>-->
+<!--            <artifactId>fastjson</artifactId>-->
+<!--            <version>${fastjson.version}</version>-->
+<!--        </dependency>-->
 
     </dependencies>
 
