@@ -1,11 +1,9 @@
 package com.transaction.test;
 
 import com.transaction.test.service.impl.TransactionExample;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
 
 /**
  * @author Eric
@@ -33,7 +31,7 @@ import org.springframework.test.context.junit4.SpringRunner;
  * @date 2021/04/30 22:42
  */
 @SpringBootTest(classes = TransactionTestApplication.class)
-@RunWith(SpringRunner.class)
+//@RunWith(SpringRunner.class)
 public class TransactionTestApplicationTests {
 
     @Autowired
